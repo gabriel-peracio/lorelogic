@@ -1,0 +1,21 @@
+@import-normalize;
+
+body {
+  margin: 0;
+  background: var(--c-bg-dimmest);
+  padding: 0;
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border: unset;
+  background: unset;
+  padding: unset;
+  color: unset;
+  font-size: unset;
+  text-align: unset;
+}
