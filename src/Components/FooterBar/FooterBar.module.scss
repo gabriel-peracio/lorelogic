@@ -1,0 +1,12 @@
+.FooterBar {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--c-text);
+  padding: 0 8px;
+
+  .start,
+  .end {
+    display: flex;
+    gap: 4px;
+  }
+}

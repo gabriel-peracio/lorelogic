@@ -1,0 +1,57 @@
+.Button {
+  display: block;
+  cursor: pointer;
+
+  border-radius: var(--border-radius);
+  line-height: 1;
+
+  &.sz-s {
+    padding: var(--p-inline-s);
+    font-size: 14px;
+  }
+  &.sz-m {
+    padding: var(--p-inline-m);
+    font-size: 16px;
+  }
+
+  &.v-primary {
+    background: var(--c-action);
+    color: var(--c-text-brightest);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--c-action-dim);
+    }
+    &:focus-visible {
+      outline: 2px solid var(--c-action);
+      outline-offset: 2px;
+      background: var(--c-action-dim);
+    }
+  }
+
+  &.v-secondary {
+    border: 1px solid var(--c-text-brightest);
+    background: var(--c-bg-dim);
+    color: var(--c-text-brightest);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--c-bg-bright);
+    }
+  }
+
+  &.v-ghost {
+    border-radius: var(--border-radius);
+    background: transparent;
+    color: var(--c-text-brightest);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--c-bg-dim);
+    }
+    &:focus-visible {
+      outline: 2px solid var(--c-bg-dim);
+      outline-offset: 2px;
+    }
+  }
+}

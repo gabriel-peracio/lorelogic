@@ -1,3 +1,26 @@
 .autocomplete {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.6);
+
+  .shortcutList {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 1ch;
+    border-radius: 3px;
+    color: white;
+    font-size: 0.9em;
+    & > kbd {
+      margin: 0 1ch;
+      border: 1px solid white;
+      border-radius: 3px;
+      background: #333;
+      padding: 0 3px;
+      color: white;
+      font-size: 0.9em;
+      font-family: monospace;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
 }

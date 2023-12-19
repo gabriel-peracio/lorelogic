@@ -1,0 +1,43 @@
+.Settings {
+  .groupTitle {
+    margin: 0;
+    padding: 8px;
+  }
+  .setting {
+    padding: 8px;
+    &:hover,
+    &:focus-within {
+      background: var(--c-bg-dim);
+    }
+    &.boolean {
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: min-content auto;
+      gap: 4px;
+      .identifier {
+        grid-column: 1/-1;
+      }
+    }
+    &.duration {
+      display: grid;
+      grid-template-rows: repeat(3, auto);
+      gap: 4px;
+      input {
+      }
+    }
+    .identifier {
+      cursor: default;
+      .category {
+        color: var(--c-text-dim);
+        &::after {
+          display: inline-block;
+          margin: 0 0.5ch;
+          content: "›";
+        }
+      }
+      .name {
+        font-weight: bold;
+      }
+    }
+  }
+}

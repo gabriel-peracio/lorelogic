@@ -1,0 +1,31 @@
+@mixin thinOverlayScrollbar {
+  // This scrollbar has the following advantages::
+  // 1. Is slim
+  // 2. Does not cause layout shifts (due to scrollbar-gutter, falling back to `overflow-y: overlay`)
+  // 3. has 4px padding on the left and right
+  overflow-y: overlay;
+
+  @supports (scrollbar-gutter: stable) {
+    scrollbar-gutter: stable;
+    &::-webkit-scrollbar {
+      background: transparent;
+      width: 12px; // creates a 4px-wide scrollbar with 4px padding on either side (4 + 4 + 4 = 12)
+    }
+    &::-webkit-scrollbar-thumb {
+      // how the trick works:
+      // 1. we add a transparent border to the thumb
+      // 2. clip the background to the padding box, preventing it from showing up under the transparent
+      // border
+      // 3. add a huge border-radius, so that it "sculpts" the inner section of the thumb
+      border: 4px solid transparent;
+      border-radius: 9999px;
+      background-clip: padding-box;
+      // with `color-mix`, we can create the equivalent of `rgba(var(--neutral-30), 0.5)`, which is
+      // not valid CSS syntax (unless `--neutral-30` was a triplet of RGB values, which it isn't)
+      background-color: color-mix(in srgb, var(--neutral-30), transparent 50%);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--neutral-30);
+    }
+  }
+}

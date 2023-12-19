@@ -1,0 +1,53 @@
+:root {
+  --c-gray: #898d97;
+  --c-stone: #989b9e;
+  --c-sand: #827f62;
+  --c-red: #df5953;
+  --c-pink: #ce4686;
+  --c-purple: #b300e7;
+  --c-indigo: #6d43ff;
+  --c-blue: #6177ef;
+  --c-cyan: #60a6c2;
+  --c-teal: #5cbc7d;
+  --c-green: #68c736;
+  --c-lime: #8ed300;
+  --c-yellow: #e6bb00;
+  --c-orange: #e38900;
+  --c-brown: #9d8150;
+}
+
+$colorNames: (
+  "gray",
+  "stone",
+  "sand",
+  "red",
+  "pink",
+  "purple",
+  "indigo",
+  "blue",
+  "cyan",
+  "teal",
+  "green",
+  "lime",
+  "yellow",
+  "orange",
+  "brown"
+);
+:root {
+  @each $colorName in $colorNames {
+    @for $i from 1 through 4 {
+      --c-#{$colorName}-#{$i}: color-mix(in srgb, var(--c-#{$colorName}), white #{20% * (5 - $i)});
+    }
+    --c-#{$colorName}-5: var(--c-#{$colorName});
+    @for $i from 6 through 9 {
+      --c-#{$colorName}-#{$i}: color-mix(in srgb, var(--c-#{$colorName}), black #{20% * ($i - 5)});
+    }
+  }
+}
+
+:root {
+  --c-success: var(--c-green-5);
+  --c-danger: var(--c-red-5);
+  --c-caution: var(--c-yellow-5);
+  --c-info: var(--c-cyan-5);
+}

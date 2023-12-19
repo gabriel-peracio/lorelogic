@@ -60,6 +60,9 @@ export const JSONStateToMarkdown = (json: JSONContent, ancestors?: JSONContent[]
     case "listItem":
       markdown += json.content?.map((child) => JSONStateToMarkdown(child, [json, ...(ancestors ?? [])])).join("") ?? "";
       break;
+    case "hardBreak":
+      markdown += "\n";
+      break;
     default:
       console.warn(`Unknown node type: ${json.type}`, json);
       break;

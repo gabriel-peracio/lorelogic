@@ -1,0 +1,26 @@
+@position-fallback --above-anchor {
+  @try {
+    bottom: calc(anchor(top) + var(--offset, 8px));
+  }
+  @try {
+    bottom: anchor(top);
+    left: anchor(left);
+  }
+  @try {
+    right: anchor(right);
+    bottom: anchor(top);
+  }
+}
+
+.HoverTooltip {
+  display: flex;
+  justify-content: center;
+  .tooltip {
+    position: absolute;
+    visibility: hidden;
+    position-fallback: --above-anchor;
+    &.visible {
+      visibility: visible;
+    }
+  }
+}

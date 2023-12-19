@@ -19,3 +19,16 @@ button {
   font-size: unset;
   text-align: unset;
 }
+
+input {
+  border: unset;
+  background: unset;
+  padding: unset;
+  color: unset;
+  font-size: unset;
+  text-align: unset;
+
+  &:focus-visible {
+    outline: unset;
+  }
+}

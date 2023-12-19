@@ -1,0 +1,14 @@
+.TabAccordion {
+  display: grid;
+  &.right {
+    grid-template-columns: 1fr auto;
+
+    .tab {
+      grid-column: 2;
+    }
+
+    .tabContents {
+      grid-row: 1;
+    }
+  }
+}

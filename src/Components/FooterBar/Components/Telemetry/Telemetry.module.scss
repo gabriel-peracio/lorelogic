@@ -1,0 +1,31 @@
+.tooltip {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 8px;
+  border: 1px solid var(--c-text);
+  border-radius: 8px;
+  background: var(--c-bg-dimmer);
+  padding: 8px;
+  width: min-content;
+  min-width: 200px;
+  font-size: small;
+  font-family: monospace;
+
+  a {
+    color: var(--c-text);
+  }
+
+  .statusBox {
+    border: 1px solid var(--c-text);
+    border-radius: 4px;
+    padding: 4px;
+
+    &.telemetryEnabled {
+      background: var(--c-green-8);
+    }
+    &.telemetryDisabled {
+      background: var(--c-red-8);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import "./colors";
+@import "./dimensions";
+@import "./misc";
+
+:root {
+  --c-bg: #333;
+  --c-bg-brightest: color-mix(in srgb, var(--c-bg), white 50%);
+  --c-bg-brighter: color-mix(in srgb, var(--c-bg), white 25%);
+  --c-bg-bright: color-mix(in srgb, var(--c-bg), white 10%);
+  --c-bg-dim: color-mix(in srgb, var(--c-bg), black 10%);
+  --c-bg-dimmer: color-mix(in srgb, var(--c-bg), black 25%);
+  --c-bg-dimmest: color-mix(in srgb, var(--c-bg), black 50%);
+
+  --c-text: #aaa;
+  --c-text-brightest: color-mix(in srgb, var(--c-text), white 50%);
+  --c-text-brighter: color-mix(in srgb, var(--c-text), white 25%);
+  --c-text-bright: color-mix(in srgb, var(--c-text), white 10%);
+  --c-text-dim: color-mix(in srgb, var(--c-text), black 10%);
+  --c-text-dimmer: color-mix(in srgb, var(--c-text), black 25%);
+  --c-text-dimmest: color-mix(in srgb, var(--c-text), black 50%);
+
+  // Main Pallette
+  --c-action: #282;
+  --c-action-brightest: color-mix(in srgb, var(--c-action), white 50%);
+  --c-action-brighter: color-mix(in srgb, var(--c-action), white 25%);
+  --c-action-bright: color-mix(in srgb, var(--c-action), white 10%);
+  --c-action-dim: color-mix(in srgb, var(--c-action), black 10%);
+  --c-action-dimmer: color-mix(in srgb, var(--c-action), black 25%);
+  --c-action-dimmest: color-mix(in srgb, var(--c-action), black 50%);
+
+  --c-action-bg: #141;
+  --c-action-bg-brightest: color-mix(in srgb, var(--c-action-bg), white 50%);
+  --c-action-bg-brighter: color-mix(in srgb, var(--c-action-bg), white 25%);
+  --c-action-bg-bright: color-mix(in srgb, var(--c-action-bg), white 10%);
+  --c-action-bg-dim: color-mix(in srgb, var(--c-action-bg), black 10%);
+  --c-action-bg-dimmer: color-mix(in srgb, var(--c-action-bg), black 25%);
+  --c-action-bg-dimmest: color-mix(in srgb, var(--c-action-bg), black 50%);
+}

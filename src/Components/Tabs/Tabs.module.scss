@@ -1,0 +1,99 @@
+.Tabs {
+  display: grid;
+
+  .tabs {
+    display: flex;
+    > .tab {
+      cursor: pointer;
+      border-radius: var(--border-radius);
+      background-color: var(--c-bg-bright);
+      padding: var(--p-inline-m);
+      color: var(--c-text-dimmer);
+      user-select: none;
+
+      &[aria-current="true"] {
+        border-color: var(--c-action);
+        background: var(--c-bg);
+        color: var(--c-action);
+      }
+    }
+  }
+  .content {
+    border-radius: var(--border-radius);
+    background-color: var(--c-bg);
+    padding: var(--sz-2);
+    color: var(--c-text);
+  }
+
+  &.top {
+    grid-template-rows: [tabs] auto [content] 1fr;
+    .tab {
+      border-bottom: 2px solid transparent;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      padding-bottom: calc(var(--p-inline-m-vrt) - 2px);
+    }
+    .content {
+      border-top-left-radius: 0;
+    }
+  }
+  &.bottom {
+    grid-template-rows: [content] 1fr [tabs] auto;
+    .tab {
+      border-top: 2px solid transparent;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+      padding-top: calc(var(--p-inline-m-vrt) - 2px);
+    }
+    .content {
+      border-bottom-left-radius: 0;
+    }
+  }
+  &.left {
+    grid-template-columns: [tabs] auto [content] 1fr;
+    .tab {
+      border-right: 2px solid transparent;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      padding-right: calc(var(--p-inline-m-hoz) - 2px);
+    }
+    .content {
+      border-top-left-radius: 0;
+    }
+  }
+  &.right {
+    grid-template-columns: [content] 1fr [tabs] auto;
+    .tab {
+      border-left: 2px solid transparent;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      padding-left: calc(var(--p-inline-m-hoz) - 2px);
+    }
+    .content {
+      border-top-right-radius: 0;
+    }
+  }
+  &.top,
+  &.bottom {
+    .tabs {
+      grid-row: tabs;
+      grid-column: 1/-1;
+    }
+    .content {
+      grid-row: content;
+      grid-column: 1/-1;
+    }
+  }
+  &.left,
+  &.right {
+    .tabs {
+      grid-row: 1/-1;
+      grid-column: tabs;
+      flex-direction: column;
+    }
+    .content {
+      grid-row: 1/-1;
+      grid-column: content;
+    }
+  }
+}

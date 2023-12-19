@@ -1,0 +1,50 @@
+.KeybindsRoute {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 8px;
+  color: var(--c-text);
+
+  .groupTitle {
+    grid-column: 1/-1;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1/-1;
+    padding: 4px 8px;
+    &:nth-of-type(odd) {
+      background-color: var(--c-bg-dim);
+    }
+
+    & > kbd {
+      grid-column: 2;
+      align-self: center;
+
+      &:hover {
+        cursor: pointer;
+        background: var(--c-bg-dim);
+        & > kbd {
+          background: var(--c-bg-dim);
+        }
+      }
+    }
+  }
+
+  .command {
+    grid-column: 1;
+  }
+
+  kbd {
+    display: inline-block;
+    font-size: small;
+
+    &:not(:has(> kbd)) {
+      border: 1px solid var(--c-text);
+      border-radius: 4px;
+      background: var(--c-bg-dimmest);
+      padding: 0 4px;
+      width: min-content;
+    }
+  }
+}

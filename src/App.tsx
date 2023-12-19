@@ -3,9 +3,12 @@ import "./ProseMirror.scss";
 import { EditorOptions, JSONContent } from "@tiptap/react";
 import { JSONStateToMarkdown } from "utils/prosemirror";
 import { useEffect, useMemo, useState } from "react";
+import { ReactComponent as Logo } from "assets/logo.svg";
 import { Editor } from "Components/Editor/Editor";
 import winkNLP from "wink-nlp";
 import model from "wink-eng-lite-web-model";
+import { Button, TabAccordion } from "Components";
+import { FooterBar } from "Components/FooterBar/FooterBar";
 
 export const App = () => {
   const [nlp, its, as] = useMemo(() => {
@@ -64,6 +67,25 @@ export const App = () => {
         ],
       },
       {
+        type: "chat",
+        content: [
+          {
+            type: "chatMessage",
+            content: [
+              {
+                type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text: `A: "Hey B, I'm about to leave. I'll see you in 2 years."`,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
         type: "paragraph",
         content: [{ type: "text", text: `How would you transfer their files, 4Tb in size, to each other?` }],
       },
@@ -72,7 +94,7 @@ export const App = () => {
         content: [
           {
             type: "text",
-            text: `Remember that while they are together on earth, before traveling, they may communicate as much as they want with practically limitless bandwidth.`,
+            text: `Remember that while they are together on earth, before traveling, they may `,
           },
         ],
       },
@@ -89,13 +111,28 @@ export const App = () => {
 
   useEffect(() => {
     const doc = nlp.readDoc(docAsMarkdown);
-    console.log("sentences", doc.sentences().out());
+    // console.log("sentences", doc.sentences().out());
   }, [docAsMarkdown, nlp]);
 
   return (
     <div className={styles.App}>
-      <Editor initialContent={editorState} onUpdate={handleUpdate} />
-      <div className={styles.markdownPreview}>{docAsMarkdown}</div>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <Logo width={32} height={32} />
+        </div>
+      </header>
+      <Editor className={styles.editor} initialContent={editorState} onUpdate={handleUpdate} />
+      <div className={styles.sidebar}>
+        <TabAccordion>
+          <TabAccordion.Tab title="tabA"></TabAccordion.Tab>
+          <TabAccordion.Tab title="tabB"></TabAccordion.Tab>
+          <TabAccordion.Tab title="tabC">
+            <Button>Edit Settings</Button>
+          </TabAccordion.Tab>
+        </TabAccordion>
+      </div>
+      <FooterBar className={styles.footer} />
+      {/* <div className={styles.markdownPreview}>{docAsMarkdown}</div> */}
     </div>
   );
 };

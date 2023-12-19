@@ -1,0 +1,116 @@
+:root {
+  /*
+   * Base sizes. Intended to be used as:
+   * - padding/margin/offset/transforms
+   * - size of small elements like icons, buttons, inputs
+   */
+  --sz-1: 4px;
+  --sz-2: 8px;
+  --sz-3: 12px;
+  --sz-4: 16px;
+  --sz-5: 20px;
+  --sz-6: 24px;
+  --sz-7: 28px;
+  --sz-8: 32px;
+  --sz-9: 48px;
+  --sz-10: 64px;
+  --sz-11: 96px;
+  --sz-12: 128px;
+  --sz-13: 192px;
+  --sz-14: 256px;
+  --sz-15: 320px;
+}
+
+:root {
+  /*
+   * Typography-based sizes. Use these to size containers that will hold text, such as tooltips,
+   * headings, info boxes, etc.
+   */
+  --sz-content-1: 24ch;
+  --sz-content-2: 48ch;
+  --sz-content-3: 64ch;
+}
+
+/* prettier-ignore */
+:root {
+  /*
+   * Box sizes. Use these to size containers that will hold other elements, such as cards, modals,
+   * sidebars, as well as for setting min/max widths for dynamic elements such as notifications,
+   * resizable layouts, inputs, etc.
+   * These may also be used to create breakpoints, media queries, and container queries.
+   */
+  --sz-box-xxs: 240px; // -> this would fit inside a smartwatch, and is also the smallest size that
+                       //    would be useful for a sidebar. Anything below this should probably not
+                       //    be considered a "box" size.
+  --sz-box-xs: 360px;  // -> the smallest phone size we support
+  --sz-box-s: 480px;   // -> the boundary between phone and tablet
+  --sz-box-m: 768px;   // -> a typical tablet size, in portrait mode
+  --sz-box-l: 1024px;  // -> the boundary between tablet and desktop, a tablet in landscape mode, a
+                       //    phone in landscape mode, a small laptop
+  --sz-box-xl: 1440px; // -> well within a typical desktop screen, any "container" or "box" larger
+                       //    than this should probably be considered "full screen"
+  --sz-box-xxl: 1920px;// -> mostly here for completeness, above this size you'd start running into
+                       //    issues where even desktop screens are too small to fit the content.
+                       //    Even this size is already dangerous since the browser chrome will
+                       //    invade the content area with scrollbars. You're better off using
+                       //    one of the screen units such as `100vw` or `vmin`/`vmax` at this point.
+}
+:root {
+  /*
+   * Paddings for inline elements. Use these to set padding for components whose children are
+   * primarily text (buttons, inputs, pills, labels, tooltips, info boxes) or text-like (a list of
+   * tags, an icon with a label)
+   */
+  --p-inline-xxs: 0 2px;
+  --p-inline-xs: 1px 2px;
+  --p-inline-s: 2px 4px;
+  --p-inline-m: 4px 8px;
+
+  /*
+   * Paddings for inline elements that use a "pill" shape. Use these to set padding for components
+   * whose children are primarily text (buttons, inputs, pills, labels, tooltips, info boxes) or
+   * text-like (a list of tags, an icon with a label)
+   */
+  --p-inline-pill-xxs: 0 4px;
+  --p-inline-pill-xs: 1px 4px;
+  --p-inline-pill-s: 2px 8px;
+  --p-inline-pill-m: 4px 12px;
+
+  /*
+   * Vertical component of inline padding
+   */
+  --p-inline-xxs-vrt: 0;
+  --p-inline-xs-vrt: 1px;
+  --p-inline-s-vrt: 2px;
+  --p-inline-m-vrt: 4px;
+
+  /*
+   * Horizontal component of inline padding
+   */
+  --p-inline-xxs-hoz: 2px;
+  --p-inline-xs-hoz: 2px;
+  --p-inline-s-hoz: 4px;
+  --p-inline-m-hoz: 8px;
+}
+
+:root {
+  /*
+   * Aspect ratios. Use these in conjunction with a width to set the height of an element, such as
+   * - a modal, dialog or wizard
+   * - a multimedia/embed element, such as images, videos, charts, maps, iframes, etc.
+   * - a complex "drawer-like" or "picker" ui component, where you interact with an interface that
+   *   "pops out" of a button, such as a color picker, calendar, datalist (a.k.a. a select with a
+   *   search box)
+   */
+  --ar-square: 1;
+  --ar-landscape: 4/3;
+  --ar-portrait: 3/4;
+  --ar-wide: 16/9;
+  --ar-ultrawide: 21/9;
+  --ar-super-ultrawide: 32/9;
+}
+
+:root {
+  --border-radius: 4px;
+  --border-radius-top: 4px 4px 0 0;
+}
